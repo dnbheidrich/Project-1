@@ -3,11 +3,11 @@ import Weather from "./models/weather.js";
 let _state = {
   /**@type {Weather} */
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
-  /**@type {Todo[]}*/
+  // /**@type {Todo[]}*/
   todos: [], //TODO change 'any' to your todo model
-  /**@type {Image[]}*/
-  images: [],
-  /**@type {Quote[]}*/
+
+  images: null,
+  // /**@type {Quote[]}*/
   quotes:[],
 };
 
