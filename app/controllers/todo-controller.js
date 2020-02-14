@@ -10,37 +10,22 @@ export default class TodoController {
     TodoService.getTodos();
   }
 
-  async addTodo(e) {
+  addTodo(e) {
     e.preventDefault();
     var form = e.target;
     var todo = {
       //TODO build the todo object from the data that comes into this method
     };
-    try {
-      await TodoService.addTodoAsync(todo);
-    } catch (error) {
-      debugger;
-      console.error("[ERROR]:", error);
-    }
+    TodoService.addTodoAsync(todo);
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be toggled
-  async toggleTodoStatus(todoId) {
-    try {
-      await TodoService.toggleTodoStatusAsync(todoId);
-    } catch (error) {
-      debugger;
-      console.error("[ERROR]:", error);
-    }
+  toggleTodoStatus(todoId) {
+    TodoService.toggleTodoStatusAsync(todoId);
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be deleted
-  async removeTodo(todoId) {
-    try {
-      await TodoService.removeTodoAsync(todoId);
-    } catch (error) {
-      debugger;
-      console.error("[ERROR]:", error);
-    }
+  removeTodo(todoId) {
+    TodoService.removeTodoAsync(todoId);
   }
 }
