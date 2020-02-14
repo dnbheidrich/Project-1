@@ -11,7 +11,7 @@ export default class Image {
   get Template(){
     return `
     <h1>${this.id}</h1>
-    <img src="${this.large_url}" alt="">
+    <img src="${this.url}" alt="">
     `
   }
 }

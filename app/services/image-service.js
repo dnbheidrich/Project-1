@@ -14,8 +14,8 @@ class ImageService {
   
 constructor(){}
 async getImage() {
-  // console.log("Calling the Weatherman");
-  let res = await imgApi.get();
+  console.log("Calling the Image");
+  let res = await imgApi.get("");
   store.commit("images", new Image(res.data));
 }
 
