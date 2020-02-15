@@ -6,7 +6,7 @@ import store from "../store.js"
 function drawQuote() {
   let quote = store.State.quotes['Template']
   document.getElementById("quote").innerHTML = quote
-  console.log("Quote test", store.State.quotes);
+  
 }
 export default class QuoteController{
   constructor(){
