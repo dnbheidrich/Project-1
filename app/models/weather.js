@@ -10,12 +10,16 @@ export default class Weather {
 
     this.city = data.name
     this.kelvin = data.main.temp
+    this.celsius = Math.floor(this.kelvin - 273.15)
+    this.fahrenheit =Math.floor((this.kelvin - 273.15) * 9/5 + 32 )
+
   }
 
   get Template(){
     return `
     <h1>${this.city}</h1>
-    <h2>${this.kelvin}</h2>
+    <h2>${this.fahrenheit}° fahrenheit</h2>
+    <h2>${this.celsius}° celsius</h2>
     `
   }
 }
