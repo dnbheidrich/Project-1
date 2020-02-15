@@ -4,7 +4,7 @@ let _state = {
   /**@type {Weather} */
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
   // /**@type {Todo[]}*/
-  todos: null, //TODO change 'any' to your todo model
+  todos: [], //TODO change 'any' to your todo model
 
   images: null,
   // /**@type {Quote[]}*/

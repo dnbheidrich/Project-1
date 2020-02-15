@@ -8,14 +8,19 @@ const todoApi = axios.create({
 });
 
 class TodoService {
+  // debugger shows im bringing in data but my new Todo is returning undefined
+  // map!!!!!
   getTodos() {
     todoApi.get("").then(res =>{
+      let todos = res.data.data.map(t => new Todo(t));
+      // store.commit("houses", houses);
       
-      console.log(res);
+      debugger
       
-      let todo = new Todo(res.data.data)
-    
-      store.commit("todos", todo)
+      // let todo = new Todo(res.data.data);
+      // let todos = [...store.State.todos, todo]
+      store.commit("todos", todos)
+      console.log(todos);
     
     })
     //TODO Handle this response from the server
@@ -24,7 +29,7 @@ class TodoService {
   addTodoAsync(todo) {
     todoApi.post("", todo).then(res =>{
       let todo = new Todo(res.data.data);
-      let todos = [...store.State.todos, todo];
+      let todos = [...store.State.todos, todo]
       store.commit("todos", todos)
   
     })

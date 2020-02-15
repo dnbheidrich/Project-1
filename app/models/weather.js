@@ -18,8 +18,9 @@ export default class Weather {
   get Template(){
     return `
     <h1>${this.city}</h1>
-    <h5>${this.fahrenheit}° fahrenheit</h5>
-    <h5>${this.celsius}° celsius</h5>
+    <h5>${this.fahrenheit}° Fahrenheit</h5>
+    <h5>${this.celsius}° Celsius</h5>
+    <h5>${this.kelvin} Kelviv</h5>
     `
   }
 }

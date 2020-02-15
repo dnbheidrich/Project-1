@@ -3,10 +3,15 @@ import store from "../store.js";
 
 //TODO Create the render function
 function drawTodo() {
-  debugger
-  let todo = store.State.todos['Template']
-  document.getElementById("todo").innerHTML = todo
-  console.log(todo);
+  let todos = store.State.todos;
+  let todoElem = document.getElementById("todo");
+  let template = "";
+
+  todos.forEach(todos => {
+    template += todos.Template;
+  });
+
+  todoElem.innerHTML = template;
   
   // todo.forEach(t => {
   //   template += t.Template;
@@ -17,6 +22,15 @@ function drawTodo() {
 
 export default class TodoController {
   constructor() {
+    let todos = store.State.todos;
+  let todoElem = document.getElementById("todo");
+  let template = "";
+
+  todos.forEach(todos => {
+    template += todos.Template;
+  });
+
+  todoElem.innerHTML = template;
     store.subscribe("todos", drawTodo);
     
     //TODO Remember to register your subscribers
@@ -28,7 +42,7 @@ export default class TodoController {
   
     event.preventDefault();
     var form = event.target;
-    var todo = {
+    var todo =  {
     //  _id: form._id.value,
     //  completed: form.completed.value,
      description: form.description.value
