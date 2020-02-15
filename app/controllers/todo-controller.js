@@ -58,8 +58,8 @@ export default class TodoController {
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be toggled
-  toggleTodoStatus(todoId) {
-    TodoService.toggleTodoStatusAsync(todoId);
+  toggleTodoStatus(id) {
+    // TodoService.toggleTodoStatusAsync(id, { completed });
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be deleted

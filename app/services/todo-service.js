@@ -47,7 +47,6 @@ class TodoService {
   }
 
   removeTodoAsync(id) {
-    debugger
     //TODO Work through this one on your own
     //		what is the request type
     //		once the response comes back, what do you need to insure happens?
