@@ -10,10 +10,13 @@ this.user = data.user;
   }
   get Template(){
     return`
+   
     <div class="col-3">
-    <span>${this.description}</span><button type="button" class="btn btn-primary"></button><button type="button" 	onclick= "app.todoController. removeTodo('${this._id}')" class="btn btn-danger"></button>
+    <span>${this.description}</span>
+    <button type="button" 	onclick= "app.todoController.toggleTodoStatus('${this._id}')" class="btn btn-primary"></button>
+    <button type="button" 	onclick= "app.todoController.removeTodo('${this._id}')" class="btn btn-danger">
+    </button>
   </div>
-
 
 
     

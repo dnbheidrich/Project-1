@@ -10,7 +10,7 @@ const _quoteApi = axios.create({
 class QuoteService {
   getQuote() {
     _quoteApi.get("").then(res =>{
-      console.log(res);
+      
       
       let quote = new Quote(res.data)
     

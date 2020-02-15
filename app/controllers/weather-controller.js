@@ -8,7 +8,7 @@ import store from "../store.js";
 function drawWeather() {
   let temp = store.State.weather.Template;
   document.getElementById("weather").innerHTML = temp
-  console.log("THE WEATHER MAN SAYS:", store.State.weather);
+  
 }
 export default class WeatherController {
   constructor() {

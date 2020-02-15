@@ -14,9 +14,7 @@ class ImageService {
   
 
 getImage() {
-  console.log("Calling the Image");
 imgApi.get("").then(res =>{
-  console.log(res);
   
   let image = new Image(res.data)
 
