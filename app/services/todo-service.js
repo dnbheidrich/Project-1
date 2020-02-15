@@ -46,19 +46,19 @@ class TodoService {
         for (let prop in update) {
           todo[prop] = update[prop];
         }
-        store.commit("cars", store.State.cars);
+        console.log(todo);
+        
+        store.commit("todos", store.State.todos);
       })
       .catch(error => {
         console.error(error);
       });
   }
+  
 
   toggleTodoStatusAsync(id) {
-    let todo = store.State.todos.find(todo => todo._id == id);
-    //TODO Make sure that you found a todo,
-    //		and if you did find one
-    //		change its completed status to whatever it is not (ex: false => true or true => false)
-    console.log(todo);
+    let todos = store.State.todos.find(todo => todo._id == id);
+     store.commit("todos", todos)
     
 
     // todoApi.put(id, todo);

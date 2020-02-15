@@ -20,17 +20,10 @@ function drawTodo() {
   // todoElem.innerHTML = template;
 }
 
+
 export default class TodoController {
   constructor() {
-    let todos = store.State.todos;
-  let todoElem = document.getElementById("todo");
-  let template = "";
 
-  todos.forEach(todos => {
-    template += todos.Template;
-  });
-
-  todoElem.innerHTML = template;
     store.subscribe("todos", drawTodo);
     
     //TODO Remember to register your subscribers
@@ -60,6 +53,9 @@ export default class TodoController {
   //NOTE This method will pass an Id to your service for the TODO that will need to be toggled
   toggleTodoStatus(id, completed) {
     TodoService.editTodo(id, { completed })
+    if(completed == true){
+      TodoService.removeTodoAsync(id)
+    }
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be deleted
