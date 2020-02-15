@@ -35,6 +35,23 @@ class TodoService {
     })
     //TODO Handle this response from the server (hint: what data comes back, do you want this?)
   }
+  editTodo(id, update) {
+    todoApi
+      .put(id, update)
+      .then(res => {
+        debugger;
+        let todo = store.State.todos.find(t => t._id == id);
+        //NOTE both these methods apply the changes to the original object
+        //car = { ...car, ...update };
+        for (let prop in update) {
+          todo[prop] = update[prop];
+        }
+        store.commit("cars", store.State.cars);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
 
   toggleTodoStatusAsync(id) {
     let todo = store.State.todos.find(todo => todo._id == id);
