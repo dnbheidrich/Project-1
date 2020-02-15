@@ -46,10 +46,16 @@ class TodoService {
     //TODO do you care about this data? or should you go get something else?
   }
 
-  removeTodoAsync(todoId) {
+  removeTodoAsync(id) {
+    debugger
     //TODO Work through this one on your own
     //		what is the request type
     //		once the response comes back, what do you need to insure happens?
+    todoApi.delete(id).then(() =>{
+      let todos = store.State.todos.filter(t => t._id !=id);
+      store.commit("todos", todos)
+    })
+    
   }
 }
 
