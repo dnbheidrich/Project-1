@@ -9,21 +9,13 @@ this.user = data.user;
     // this.description = data.description
   }
 
-  get checkTemplate(){
-    return`
-    <div class="col-3">
-    <span>${this.description}</span>
-    <button type="button" 	onclick= "app.todoController.toggleTodoStatus('${this._id}', ${this.completed} )" class="btn btn-primary">X</button>
-    <button type="button" 	onclick= "app.todoController.removeTodo('${this._id}')" class="btn btn-danger">
-    </button>
-  </div>
-    `
-  }
+ 
   get Template(){
     return`
    
     <div class="col-3">
     <span>${this.description}</span>
+    <span>${this.completed}</span>
     <button type="button" 	onclick= "app.todoController.toggleTodoStatus('${this._id}', ${this.completed = true} )" class="btn btn-primary"></button>
     <button type="button" 	onclick= "app.todoController.removeTodo('${this._id}')" class="btn btn-danger">
     </button>

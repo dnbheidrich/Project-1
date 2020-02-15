@@ -4,20 +4,21 @@ import store from "../store.js";
 //TODO Create the render function
 function drawTodo() {
   let todos = store.State.todos;
+   let todoCount = 0
+   let todoCountElem = document.getElementById("todoCount")
   let todoElem = document.getElementById("todo");
   let template = "";
 
   todos.forEach(todos => {
+    todoCount++
     template += todos.Template;
+
   });
 
   todoElem.innerHTML = template;
+  todoCountElem.innerHTML = todoCount.toString()
   
-  // todo.forEach(t => {
-  //   template += t.Template;
-  // });
-
-  // todoElem.innerHTML = template;
+  
 }
 
 
@@ -53,9 +54,7 @@ export default class TodoController {
   //NOTE This method will pass an Id to your service for the TODO that will need to be toggled
   toggleTodoStatus(id, completed) {
     TodoService.editTodo(id, { completed })
-    if(completed == true){
-      TodoService.removeTodoAsync(id)
-    }
+   
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be deleted
