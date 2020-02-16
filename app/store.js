@@ -1,4 +1,6 @@
 import Weather from "./models/weather.js";
+// NOTE need help with background img/ have it working but not how i want it
+// NOTE when checking todos completed prop its drawing true when fals and not persisting but will fix on reload
 
 let _state = {
   /**@type {Weather} */

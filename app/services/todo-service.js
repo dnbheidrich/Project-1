@@ -40,9 +40,7 @@ class TodoService {
       .put(id, update)
       .then(res => {
         debugger;
-        let todo = store.State.todos.find(t => t._id == id);
-        //NOTE both these methods apply the changes to the original object
-        //car = { ...car, ...update };
+        let todo = store.State.todos.find(t => t._id != id);
         for (let prop in update) {
           todo[prop] = update[prop];
         }

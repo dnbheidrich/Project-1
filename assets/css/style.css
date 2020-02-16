@@ -5,3 +5,7 @@
 .blue{
   color: blue;
 }
+
+.right{
+  justify-content: center;
+}
