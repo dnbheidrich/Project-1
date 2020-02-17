@@ -16,7 +16,7 @@ this.user = data.user;
     <div class="col-3">
     <span>${this.description}</span>
     <span>${this.completed}</span>
-    <button type="button" 	onclick= "app.todoController.toggleTodoStatus('${this._id}', ${this.completed = true} )" class="btn btn-primary"></button>
+    <input ${this.completed ? "checked" : ""} class="form-check-input" type="checkbox" onclick= "app.todoController.editTodo('${this._id}')">
     <button type="button" 	onclick= "app.todoController.removeTodo('${this._id}')" class="btn btn-danger">
     </button>
   </div>
@@ -26,3 +26,4 @@ this.user = data.user;
     `
   }
 }
+/* <button type="button" 	onclick= "app.todoController.toggleTodoStatus('${this._id}')" class="btn btn-primary"></button> */

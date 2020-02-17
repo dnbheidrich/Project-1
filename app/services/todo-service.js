@@ -15,7 +15,6 @@ class TodoService {
       let todos = res.data.data.map(t => new Todo(t));
       // store.commit("houses", houses);
       
-      debugger
       
       // let todo = new Todo(res.data.data);
       // let todos = [...store.State.todos, todo]
@@ -35,16 +34,16 @@ class TodoService {
     })
     //TODO Handle this response from the server (hint: what data comes back, do you want this?)
   }
-  editTodo(id, update) {
+  editTodo(id) {
+    let todo = store.State.todos.find(t => t._id == id);
+    todo.completed = !todo.completed;
     todoApi
-      .put(id, update)
+      .put(id, todo)
       .then(res => {
-        debugger;
-        let todo = store.State.todos.find(t => t._id != id);
-        for (let prop in update) {
-          todo[prop] = update[prop];
-        }
-        console.log(todo);
+        // for (let prop in update) {
+        //   todo[prop] = update[prop];
+        // }
+        // console.log(todo);
         
         store.commit("todos", store.State.todos);
       })
@@ -54,14 +53,14 @@ class TodoService {
   }
   
 
-  toggleTodoStatusAsync(id) {
-    let todos = store.State.todos.find(todo => todo._id == id);
-     store.commit("todos", todos)
+  // toggleTodoStatusAsync(id) {
+  //   let todos = store.State.todos.find(todo => todo._id == id);
+  //    store.commit("todos", todos)
     
 
     // todoApi.put(id, todo);
     //TODO do you care about this data? or should you go get something else?
-  }
+  // }
 
   removeTodoAsync(id) {
     //TODO Work through this one on your own

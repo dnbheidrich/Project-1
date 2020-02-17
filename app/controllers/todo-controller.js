@@ -52,8 +52,8 @@ export default class TodoController {
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be toggled
-  toggleTodoStatus(id, completed) {
-    TodoService.editTodo(id, { completed })
+  editTodo(id) {
+    TodoService.editTodo(id)
    
   }
 
